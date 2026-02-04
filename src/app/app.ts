@@ -24,15 +24,15 @@ export class App {
         contact: 'Contact'
       },
       hero: {
-        tagline: 'Bringing the Party to Life',
-        subtitle: 'Professional DJ for Private Events, Corporate Parties & Weddings',
+        tagline: 'Happy Feet, Happy Hearts',
+        subtitle: 'Mainstream DJ for Private Events, Corporate Parties & Weddings',
         cta: 'Book Now'
       },
       about: {
         title: 'Meet Your DJ',
         p1: 'Hey there! I\'m Liat Elka.',
-        p2: 'I turn every event into an unforgettable dance party. From 70s disco to today\'s biggest hits, I read the crowd and keep the energy high all night long.',
-        p3: 'Good vibes only. Let\'s make your event legendary!',
+        p2: 'Mainstream DJ bringing the best hits to your dance floor. From 70s disco to today\'s biggest bangers, I read the crowd and keep the energy high all night long.',
+        p3: 'Happy feet, happy hearts. Let\'s make your event legendary! 🕺',
         genres: ['Mainstream Hits', '70s • 80s • 90s', 'Hip Hop', 'Latin']
       },
       services: {
@@ -109,15 +109,15 @@ export class App {
         contact: 'צור קשר'
       },
       hero: {
-        tagline: 'מביאה את המסיבה לחיים',
-        subtitle: 'DJ מקצועית לאירועים פרטיים, עסקיים וחתונות',
+        tagline: 'רגליים שמחות, לבבות שמחים',
+        subtitle: 'DJ מיינסטרים לאירועים פרטיים, עסקיים וחתונות',
         cta: 'להזמנה'
       },
       about: {
         title: 'הכירו את ה-DJ',
         p1: 'היי! אני ליאת אלקה.',
-        p2: 'אני הופכת כל אירוע למסיבת ריקודים בלתי נשכחת. מדיסקו של שנות ה-70 ועד הלהיטים הכי חמים של היום, אני קוראת את הקהל ושומרת על האנרגיה גבוהה כל הלילה.',
-        p3: 'רק ווייבים טובים. בואו נהפוך את האירוע שלכם לאגדי!',
+        p2: 'DJ מיינסטרים שמביאה את הלהיטים הכי טובים לרחבת הריקודים שלכם. מדיסקו של שנות ה-70 ועד הלהיטים הכי חמים של היום, אני קוראת את הקהל ושומרת על האנרגיה גבוהה כל הלילה.',
+        p3: 'רגליים שמחות, לבבות שמחים. בואו נהפוך את האירוע שלכם לאגדי! 🕺',
         genres: ['להיטים', '70s • 80s • 90s', 'היפ הופ', 'לטינית']
       },
       services: {
