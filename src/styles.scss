@@ -1,36 +1,49 @@
 /* ===========================================
    LIAT ELKA DJ - Global Styles
-   Fun & Groovy Theme 🎉
+   2000s Hip Hop / Disco / Pop-Rock Theme 🎤✨
    =========================================== */
 
 // ============ CSS VARIABLES ============
 :root {
-  // Colors - Fun & Groovy Palette
-  --color-bg-primary: #FFF8F0;
-  --color-bg-secondary: #F5F0FF;
-  --color-bg-tertiary: #FFF0F5;
+  // Colors - 2000s Hip Hop / Disco / Pop-Rock Palette
+  --color-bg-primary: #0D0D0D;
+  --color-bg-secondary: #1A1A2E;
+  --color-bg-tertiary: #16213E;
+  --color-surface: #1F1F1F;
   
-  --color-accent-pink: #FF1493;
-  --color-accent-purple: #8B5CF6;
-  --color-accent-orange: #FF6B35;
-  --color-accent-teal: #06B6D4;
-  --color-accent-yellow: #FBBF24;
+  // Metallic & Bling
+  --color-gold: #FFD700;
+  --color-gold-dark: #B8860B;
+  --color-silver: #C0C0C0;
+  --color-chrome: #E8E8E8;
   
-  --color-text-primary: #2D1B4E;
-  --color-text-secondary: #6B5B7A;
-  --color-text-light: #FFFFFF;
+  // Neon Accents
+  --color-neon-pink: #FF10F0;
+  --color-neon-blue: #00D4FF;
+  --color-neon-purple: #B026FF;
+  --color-electric-red: #FF073A;
+  
+  // Disco Vibes
+  --color-disco-purple: #9D4EDD;
+  --color-disco-blue: #3A0CA3;
+  
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B8B8B8;
+  --color-text-gold: #FFD700;
   
   // Gradients
-  --gradient-groovy: linear-gradient(135deg, #FF1493 0%, #8B5CF6 50%, #06B6D4 100%);
-  --gradient-sunset: linear-gradient(135deg, #FF6B35 0%, #FF1493 100%);
-  --gradient-disco: linear-gradient(135deg, #FBBF24 0%, #FF1493 50%, #8B5CF6 100%);
+  --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+  --gradient-disco: linear-gradient(135deg, #FF10F0 0%, #B026FF 50%, #00D4FF 100%);
+  --gradient-bling: linear-gradient(135deg, #FFD700 0%, #FFFFFF 25%, #FFD700 50%, #FFFFFF 75%, #FFD700 100%);
+  --gradient-dark: linear-gradient(180deg, #0D0D0D 0%, #1A1A2E 50%, #16213E 100%);
+  --gradient-neon: linear-gradient(90deg, #FF10F0, #B026FF, #00D4FF, #FF10F0);
   
   // Typography
   --font-primary: 'Poppins', sans-serif;
   --font-accent: 'Pacifico', cursive;
   
   // Spacing
-  --section-padding: 80px;
+  --section-padding: 100px;
   --container-max-width: 1200px;
   
   // Border Radius
@@ -41,10 +54,10 @@
   --radius-full: 9999px;
   
   // Shadows
-  --shadow-sm: 0 2px 8px rgba(139, 92, 246, 0.1);
-  --shadow-md: 0 4px 20px rgba(139, 92, 246, 0.15);
-  --shadow-lg: 0 8px 40px rgba(139, 92, 246, 0.2);
-  --shadow-glow: 0 0 30px rgba(255, 20, 147, 0.3);
+  --shadow-gold: 0 0 30px rgba(255, 215, 0, 0.4);
+  --shadow-neon: 0 0 30px rgba(255, 16, 240, 0.5);
+  --shadow-glow: 0 0 60px rgba(176, 38, 255, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.6);
   
   // Transitions
   --transition-fast: 0.2s ease;
@@ -76,6 +89,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
@@ -103,22 +118,36 @@ a {
 
 .section {
   padding: var(--section-padding) 0;
+  position: relative;
 }
 
 .section-title {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
   
   h2 {
-    background: var(--gradient-groovy);
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     display: inline-block;
+    text-shadow: none;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--gradient-gold);
+    }
   }
   
   p {
-    margin-top: 16px;
+    margin-top: 32px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -130,87 +159,102 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 32px;
+  gap: 10px;
+  padding: 16px 36px;
   border-radius: var(--radius-full);
   font-family: var(--font-primary);
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   border: none;
   cursor: pointer;
   transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
   
   &-primary {
-    background: var(--gradient-groovy);
-    color: var(--color-text-light);
-    box-shadow: var(--shadow-md);
+    background: var(--gradient-gold);
+    color: #000;
+    box-shadow: var(--shadow-gold);
     
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-glow);
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 0 50px rgba(255, 215, 0, 0.6);
     }
   }
   
   &-secondary {
     background: transparent;
-    color: var(--color-accent-purple);
-    border: 2px solid var(--color-accent-purple);
+    color: var(--color-gold);
+    border: 2px solid var(--color-gold);
     
     &:hover {
-      background: var(--color-accent-purple);
-      color: var(--color-text-light);
+      background: var(--color-gold);
+      color: #000;
+      box-shadow: var(--shadow-gold);
     }
   }
   
   &-whatsapp {
-    background: #25D366;
-    color: var(--color-text-light);
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: var(--color-text-primary);
     font-size: 1.1rem;
-    padding: 16px 40px;
+    padding: 18px 48px;
     
     &:hover {
-      background: #128C7E;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 0 40px rgba(37, 211, 102, 0.5);
     }
   }
 }
 
 // ============ CARDS ============
 .card {
-  background: white;
+  background: var(--color-surface);
   border-radius: var(--radius-lg);
   padding: 32px;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(255, 215, 0, 0.1);
   transition: var(--transition-normal);
   
   &:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: var(--shadow-gold);
   }
 }
 
 // ============ ANIMATIONS ============
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-15px); }
 }
 
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 20, 147, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(255, 20, 147, 0.6); }
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 0 50px rgba(255, 215, 0, 0.8); }
 }
 
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes disco-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
 }
 
 @keyframes fade-in-up {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -219,31 +263,29 @@ a {
 }
 
 .animate-fade-in-up {
-  animation: fade-in-up 0.6s ease forwards;
+  animation: fade-in-up 0.8s ease forwards;
 }
 
-// ============ DECORATIVE ELEMENTS ============
-.blob {
+// ============ DISCO BALL EFFECT ============
+.disco-dots {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.5;
-  z-index: -1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
   
-  &-pink {
-    background: var(--color-accent-pink);
-  }
-  
-  &-purple {
-    background: var(--color-accent-purple);
-  }
-  
-  &-orange {
-    background: var(--color-accent-orange);
-  }
-  
-  &-teal {
-    background: var(--color-accent-teal);
+  &::before {
+    content: '';
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+    background-image: 
+      radial-gradient(circle, rgba(255, 215, 0, 0.15) 1px, transparent 1px),
+      radial-gradient(circle, rgba(255, 16, 240, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px, 70px 70px;
+    animation: disco-spin 120s linear infinite;
   }
 }
 
@@ -257,14 +299,14 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gradient-groovy);
+  background: var(--gradient-gold);
   border-radius: var(--radius-full);
 }
 
 // ============ SELECTION ============
 ::selection {
-  background: var(--color-accent-pink);
-  color: white;
+  background: var(--color-gold);
+  color: #000;
 }
 
 // ============ RESPONSIVE ============
