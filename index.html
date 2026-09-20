@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/; img-src 'self' data:; media-src 'self'; frame-src https://w.soundcloud.com; connect-src https://formspree.io/f/xkjgjrgl; form-action https://formspree.io/f/xkjgjrgl;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Liat Elka | Sunset Beach Club Vibes</title>
+    
+    <!-- Google Fonts: Secular One and Rubik for Hebrew, Montserrat for English -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Rubik:wght@300;400;600;700&family=Secular+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous">
+
+    <style>
+        /* --- Tropical Sunset Color Palette --- */
+        :root {
+            --hot-pink: #FF1493;
+            --fiery-orange: #FF4500;
+            --sunset-yellow: #FFD700;
+            --sky-blue: #00BFFF;
+            --dark-bg: #1A0B2E; 
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rubik', sans-serif;
+            background-color: var(--dark-bg);
+            background-image: radial-gradient(circle at top right, rgba(255,69,0,0.15), transparent 40%),
+                              radial-gradient(circle at bottom left, rgba(255,20,147,0.15), transparent 40%);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .en-text {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .section-title.he-title {
+            font-family: 'Secular One', sans-serif;
+            font-weight: 400;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to left, var(--sunset-yellow), var(--fiery-orange), var(--hot-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        /* --- UI Elements: Glassmorphism & Buttons --- */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(45deg, var(--hot-pink), var(--fiery-orange));
+            color: #fff;
+            font-family: 'Secular One', sans-serif;
+            font-weight: 400;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(255, 69, 0, 0.4);
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 20, 147, 0.6);
+        }
+
+        section {
+            padding: 64px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            font-weight: 900;
+        }
+
+        /* --- 1. Hero Section --- */
+        .hero {
+            position: relative;
+            height: 100vh;
+            height: 100svh;
+            min-height: 640px;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Dead-center horizontally */
+            align-items: center;     /* Dead-center vertically */
+            flex-direction: column;
+            text-align: center;
+            overflow: hidden;
+            padding: 0;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 20, 147, 0.2);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            z-index: -1;
+            background-image: linear-gradient(to bottom, rgba(26,11,46,0.3), rgba(255,69,0,0.4));
+        }
+
+        .hero-content {
+            --hero-logo-width: min(86vw, 60svh, 760px);
+            z-index: 1;
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .hero-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: var(--hero-logo-width);
+            height: auto;
+            aspect-ratio: 1240 / 1180;
+            object-fit: contain;
+            transform: translate(-50%, -50%);
+            mix-blend-mode: screen;
+        }
+
+        .hero-actions {
+            position: absolute;
+            top: calc(50% + var(--hero-logo-width) * 0.475806 + 10px);
+            width: 100%;
+            padding: 0 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-actions .btn {
+            padding: 10px 32px;
+        }
+
+        .hero-subtitle {
+            font-family: 'Secular One', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: #ffffff;
+            margin: 0;
+            letter-spacing: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .hero-socials {
+            position: absolute;
+            top: max(32px, env(safe-area-inset-top));
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 25px;
+            margin-top: 0;
+        }
+
+        .hero-socials a {
+            color: #fff;
+            font-size: 2rem;
+            line-height: 1;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 15px var(--hot-pink);
+        }
+
+        .hero-socials a:hover {
+            color: var(--sunset-yellow);
+            transform: scale(1.2);
+        }
+
+        /* --- 2. About Me --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: stretch;
+        }
+
+        .about-img-wrapper {
+            position: relative;
+            border-radius: 20px;
+            z-index: 1;
+        }
+
+        /* Ambient back-glow effect */
+        .about-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -15px; left: -15px; right: -15px; bottom: -15px;
+            background: linear-gradient(45deg, var(--hot-pink), var(--fiery-orange));
+            filter: blur(30px);
+            opacity: 0.65;
+            z-index: -1;
+            border-radius: 30px;
+            transition: opacity 0.3s ease;
+        }
+
+        .about-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+            display: block;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .about-text {
+            padding: 40px;
+        }
+
+        .about-text p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #E2DDF8;
+            font-weight: 300;
+        }
+
+        /* --- 3. Music / Sets --- */
+        .music-stack {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 25px;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .soundcloud-embed {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background: var(--dark-bg);
+        }
+
+        /* --- 4. Gallery --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 25px rgba(255, 69, 0, 0.2);
+            border: 2px solid transparent;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03) translateY(-5px);
+            border-color: var(--hot-pink);
+            box-shadow: 0 15px 35px rgba(255, 20, 147, 0.4);
+        }
+
+        /* --- 5. Contact & Footer --- */
+        .contact-section {
+            background: linear-gradient(to bottom, transparent, rgba(255, 20, 147, 0.1));
+            max-width: 100%;
+            border-top: 1px solid var(--glass-border);
+        }
+        
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 50px;
+        }
+
+        .contact-form .btn:disabled {
+            cursor: wait;
+            opacity: 0.65;
+            transform: none;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .form-honeypot {
+            display: none;
+        }
+
+        .form-status {
+            min-height: 1.6em;
+            font-size: 1rem;
+            text-align: center;
+            overflow-wrap: anywhere;
+        }
+
+        .form-status[data-state="success"] {
+            color: #9de8bd;
+        }
+
+        .form-status[data-state="error"] {
+            color: #ffb4b4;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+            font-size: 1.2rem;
+            font-family: 'Rubik', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--sky-blue);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .contact-options-title {
+            margin-top: 30px;
+            text-align: center;
+            font-family: 'Rubik', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .contact-options {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 12px;
+        }
+        
+        .contact-options a,
+        .copy-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            font-size: 2rem;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-options a:hover {
+            color: var(--sky-blue);
+        }
+
+        .contact-options a:focus-visible,
+        .copy-email:focus-visible {
+            outline: 2px solid var(--sky-blue);
+            outline-offset: 4px;
+            border-radius: 4px;
+        }
+
+        .contact-email {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .contact-email-address {
+            font-size: 0.9rem;
+            white-space: nowrap;
+            user-select: text;
+        }
+
+        .copy-email {
+            flex: 0 0 48px;
+            border: 0;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .copy-email:hover {
+            color: var(--sky-blue);
+        }
+
+        .copy-email:disabled {
+            cursor: wait;
+            opacity: 0.65;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 48px;
+            padding: 24px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            section { padding: 40px 5%; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-img-wrapper { order: -1; }
+            .about-img { position: static; height: 400px; }
+            .section-title { font-size: 2.8rem; margin-bottom: 1.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .contact-form { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Hero Section -->
+    <header class="hero">
+        <video src="assets/hero.mp4" autoplay loop muted playsinline></video>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-socials">
+                <a href="https://www.instagram.com/liat_elka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://soundcloud.com/liatelka" target="_blank" rel="noopener noreferrer" aria-label="SoundCloud"><i class="fab fa-soundcloud"></i></a>
+                <a href="https://wa.me/972533029444?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%99%D7%90%D7%AA!%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%AA%D7%A7%D7%9C%D7%95%D7%98%20%D7%91%D7%90%D7%99%D7%A8%D7%95%D7%A2%20%D7%A9%D7%9C%D7%99%3A)" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+            </div>
+            <img src="assets/logo.webp" alt="DJ Liat Elka Logo" class="hero-logo">
+            <div class="hero-actions">
+                <h2 class="hero-subtitle">דיג׳יי למסיבות ואירועים פרטיים</h2>
+                <a href="#contact" class="btn">לשריון תאריך</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. About Me -->
+    <section id="about">
+        <div class="about-grid">
+            <div class="about-text glass-panel">
+                <h2 class="section-title he-title" style="text-align: right;"><span class="gradient-text">נעים להכיר</span></h2>
+                <p>
+                    אני ליאת,<br>
+                    ושתי האהבות הגדולות שלי בחיים הן מוזיקה וריקוד. החיבור הטבעי ביניהן הוביל אותי אל עמדת הדיג'יי, והיום אני כאן כדי להרים לכם את האירוע שתמיד חלמתם עליו.
+                </p>
+                <p>
+                    בין אם מדובר במסיבת רווקות, יום הולדת, אירוע חברה או מסיבה פרטית – כל אירוע מקבל יחס אישי ופסקול שנבחר בקפידה, בדיוק לטעם שלכם. הפלייליסט שלי נועד להשאיר את הרחבה בוערת וכולל את כל מה שירים את הקהל באוויר: לטיני, רגטון, האוס, להיטי מיינסטרים שכולם אוהבים, חפלה, דיסקו, 80s, היפ-הופ 2000 ולהיטים על זמניים.
+                </p>
+                <p>
+                    אני לא רק מתקלטת, אני חיה את המסיבה איתכם. אני ארקוד ואשיר איתכם, אביא את האנרגיה הייחודית שלי, ואדאג שהרחבה שלכם תהיה הכי שמחה שיש!
+                </p>
+                <div style="text-align: right; margin-top: 20px;">
+                    <a href="#contact" class="btn">בואו נדבר</a>
+                </div>
+            </div>
+            
+            <div class="about-img-wrapper">
+                <img src="assets/about.webp" alt="DJ Liat Elka at the decks" class="about-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Music / Sets -->
+    <section id="music">
+        <h2 class="section-title en-text"><span class="gradient-text">Vibes & Sets</span></h2>
+        <div class="music-stack">
+            <!-- Embed 1 -->
+            <div class="soundcloud-embed">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/liatelka/latin-taste-mini-set&color=%23FF1493&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+            </div>
+            
+            <!-- Embed 2 -->
+            <div class="soundcloud-embed">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/liatelka/80s-cocktail-party&color=%23FF1493&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+            </div>
+
+            <!-- Embed 3 -->
+            <div class="soundcloud-embed">
+                <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https://soundcloud.com/liatelka/2012-vibes&color=%23FF1493&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=false"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Gallery -->
+    <section id="gallery">
+        <h2 class="section-title en-text"><span class="gradient-text">The Energy</span></h2>
+        <div class="gallery-grid">
+            <video src="assets/gallery-1.mp4" autoplay loop muted playsinline class="gallery-item"></video>
+            <video src="assets/gallery-2.mp4" autoplay loop muted playsinline class="gallery-item"></video>
+            <video src="assets/gallery-3.mp4" autoplay loop muted playsinline class="gallery-item"></video>
+            <img src="assets/gallery-1.webp" alt="DJ Liat Elka Live 1" class="gallery-item">
+            <img src="assets/gallery-2.webp" alt="DJ Liat Elka Live 2" class="gallery-item">
+            <img src="assets/gallery-3.webp" alt="DJ Liat Elka Live 3" class="gallery-item">
+        </div>
+    </section>
+
+    <!-- 5. Contact & Footer -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2 class="section-title en-text"><span class="gradient-text">Let's Connect</span></h2>
+            
+            <form class="contact-form glass-panel" id="bookingForm" dir="rtl" action="https://formspree.io/f/xkjgjrgl" method="POST">
+                <div class="form-honeypot" aria-hidden="true">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-label="Leave empty">
+                </div>
+                <div class="form-group">
+                    <label for="name">שם מלא</label>
+                    <input type="text" id="name" name="name" autocomplete="name" maxlength="100" placeholder="שם מלא" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">מספר טלפון</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" maxlength="30" placeholder="מספר טלפון" required>
+                </div>
+                <div class="form-group">
+                    <label for="date">תאריך האירוע</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">פרטי האירוע</label>
+                    <textarea id="message" name="message" maxlength="3000" placeholder="ספרו לי קצת על האירוע שלכם (מיקום, אווירה, מוזמנים...)" required></textarea>
+                </div>
+                <button type="submit" class="btn">שליחת פרטים</button>
+                <p class="form-status" id="bookingStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+            </form>
+            
+            <h3 class="contact-options-title" id="contact-options-title">ואפשר ליצור איתי קשר גם כאן:</h3>
+            <nav class="contact-options" aria-labelledby="contact-options-title">
+                <a href="https://wa.me/972533029444?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%99%D7%90%D7%AA!%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%AA%D7%A7%D7%9C%D7%95%D7%98%20%D7%91%D7%90%D7%99%D7%A8%D7%95%D7%A2%20%D7%A9%D7%9C%D7%99%3A)" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/liat_elka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            </nav>
+
+            <div class="contact-email" dir="ltr">
+                <button type="button" class="copy-email" id="copyEmail" aria-label="העתקת כתובת המייל" title="העתקת כתובת המייל">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                </button>
+                <span class="contact-email-address" id="contactEmailAddress">liatelka.music@gmail.com</span>
+            </div>
+            <p class="form-status" id="copyEmailStatus" role="status" aria-live="polite" aria-atomic="true"></p>
+
+            <footer>
+                <p style="font-size: 1.1rem; opacity: 0.8; color: #fff;">&copy; 2026 DJ Liat Elka. כל הזכויות שמורות.</p>
+            </footer>
+        </div>
+    </section>
+
+    <script src="booking.js"></script>
+</body>
+</html>
