@@ -400,8 +400,7 @@
             margin-top: 12px;
         }
         
-        .contact-options a,
-        .copy-email {
+        .contact-options a {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -417,8 +416,7 @@
             color: var(--sky-blue);
         }
 
-        .contact-options a:focus-visible,
-        .copy-email:focus-visible {
+        .contact-options a:focus-visible {
             outline: 2px solid var(--sky-blue);
             outline-offset: 4px;
             border-radius: 4px;
@@ -436,22 +434,6 @@
             font-size: 0.9rem;
             white-space: nowrap;
             user-select: text;
-        }
-
-        .copy-email {
-            flex: 0 0 48px;
-            border: 0;
-            background: transparent;
-            cursor: pointer;
-        }
-
-        .copy-email:hover {
-            color: var(--sky-blue);
-        }
-
-        .copy-email:disabled {
-            cursor: wait;
-            opacity: 0.65;
         }
 
         footer {
@@ -501,7 +483,7 @@
                 <h2 class="section-title he-title" style="text-align: right;"><span class="gradient-text">נעים להכיר</span></h2>
                 <p>
                     אני ליאת,<br>
-                    ושתי האהבות הגדולות שלי בחיים הן מוזיקה וריקוד. החיבור הטבעי ביניהן הוביל אותי אל עמדת הדיג'יי, והיום אני כאן כדי להרים לכם את האירוע שתמיד חלמתם עליו.
+                    בוגרת בית הספר למוזיקה "רימון" ובעברי מדריכת סלסה ובצ'אטה. שתי האהבות הגדולות שלי בחיים, מוזיקה וריקוד, יצרו את החיבור הטבעי ביניהן והובילו אותי אל עמדת הדיג'יי, והיום אני כאן כדי להרים לכם את האירוע שתמיד חלמתם עליו.
                 </p>
                 <p>
                     בין אם מדובר במסיבת רווקות, יום הולדת, אירוע חברה או מסיבה פרטית – כל אירוע מקבל יחס אישי ופסקול שנבחר בקפידה, בדיוק לטעם שלכם. הפלייליסט שלי נועד להשאיר את הרחבה בוערת וכולל את כל מה שירים את הקהל באוויר: לטיני, רגטון, האוס, להיטי מיינסטרים שכולם אוהבים, חפלה, דיסקו, 80s, היפ-הופ 2000 ולהיטים על זמניים.
@@ -586,16 +568,13 @@
             <h3 class="contact-options-title" id="contact-options-title">ואפשר ליצור איתי קשר גם כאן:</h3>
             <nav class="contact-options" aria-labelledby="contact-options-title">
                 <a href="https://wa.me/972533029444?text=%D7%94%D7%99%D7%99%20%D7%9C%D7%99%D7%90%D7%AA!%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%9C%D7%92%D7%91%D7%99%20%D7%AA%D7%A7%D7%9C%D7%95%D7%98%20%D7%91%D7%90%D7%99%D7%A8%D7%95%D7%A2%20%D7%A9%D7%9C%D7%99%3A)" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" title="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+                <a href="mailto:liatelka.music@gmail.com" aria-label="Email" title="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
                 <a href="https://www.instagram.com/liat_elka/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
             </nav>
 
             <div class="contact-email" dir="ltr">
-                <button type="button" class="copy-email" id="copyEmail" aria-label="העתקת כתובת המייל" title="העתקת כתובת המייל">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
-                </button>
                 <span class="contact-email-address" id="contactEmailAddress">liatelka.music@gmail.com</span>
             </div>
-            <p class="form-status" id="copyEmailStatus" role="status" aria-live="polite" aria-atomic="true"></p>
 
             <footer>
                 <p style="font-size: 1.1rem; opacity: 0.8; color: #fff;">&copy; 2026 DJ Liat Elka. כל הזכויות שמורות.</p>

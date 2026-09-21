@@ -39,24 +39,3 @@ document.getElementById('bookingForm').addEventListener('submit', async function
         submitButton.textContent = 'שליחת פרטים';
     }
 });
-
-document.getElementById('copyEmail').addEventListener('click', async function(event) {
-    const button = event.currentTarget;
-    if (button.disabled) return;
-
-    const address = document.getElementById('contactEmailAddress');
-    const status = document.getElementById('copyEmailStatus');
-    button.disabled = true;
-    status.textContent = '';
-
-    try {
-        await navigator.clipboard.writeText(address.textContent.trim());
-        status.dataset.state = 'success';
-        status.textContent = 'כתובת המייל הועתקה';
-    } catch {
-        status.dataset.state = 'error';
-        status.textContent = 'לא ניתן להעתיק אוטומטית. אפשר לסמן ולהעתיק את הכתובת ידנית.';
-    } finally {
-        button.disabled = false;
-    }
-});
